@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "bun --bun vitest run",
-    "test:watch": "bun --bun vitest"
+    "test:watch": "bun --bun vitest",
+    "deploy": "bun run build && bun --bun wrangler deploy",
+    "deploy:dry-run": "bun run build && bun --bun wrangler deploy --dry-run"
   },
   "dependencies": {
     "@tanstack/hotkeys": "^0.8.0",
@@ -22,6 +24,7 @@
     "jsdom": "^29.1.1",
     "typescript": "^6.0.3",
     "vite": "^8.0.16",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.8",
+    "wrangler": "^4.100.0"
   }
 }
