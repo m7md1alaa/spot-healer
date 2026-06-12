@@ -4,6 +4,7 @@ import { commitWorking, getState } from '../engine/canvas';
 import { downloadImage } from '../engine/export';
 import * as history from '../engine/history';
 import { handleFileUpload } from '../engine/upload';
+import { initKeybindings } from './keybindings';
 
 const MIN_RADIUS = 5;
 const MAX_RADIUS = 60;
@@ -117,5 +118,31 @@ export function initControls(): void {
   downloadBtn.addEventListener('click', () => {
     commitWorking();
     downloadImage();
+  });
+
+  // --- Keyboard shortcuts ---
+  initKeybindings({
+    undo: () => {
+      history.undo();
+      refreshHistoryButtons();
+    },
+    redo: () => {
+      history.redo();
+      refreshHistoryButtons();
+    },
+    decreaseBrushSize: () => {
+      radius = Math.max(MIN_RADIUS, radius - 5);
+      brush.setRadius(radius);
+      brushSizeInput.value = String(radius);
+      brushSizeValue.textContent = String(radius);
+      updateCursorSize();
+    },
+    increaseBrushSize: () => {
+      radius = Math.min(MAX_RADIUS, radius + 5);
+      brush.setRadius(radius);
+      brushSizeInput.value = String(radius);
+      brushSizeValue.textContent = String(radius);
+      updateCursorSize();
+    },
   });
 }
