@@ -1,3 +1,10 @@
+// When running under Bun's native test runner (not Vitest), register happy-dom
+// globals so that document, window, KeyboardEvent, etc. are available.
+if (typeof document === 'undefined') {
+  const { GlobalRegistrator } = await import('@happy-dom/global-registrator');
+  GlobalRegistrator.register();
+}
+
 // jsdom doesn't implement ImageData and Node.js running under Rosetta may not expose it.
 // Provide a minimal shim matching the subset the engine code actually uses.
 if (typeof globalThis.ImageData === 'undefined') {
