@@ -1,5 +1,5 @@
 import { BrushEngine } from "../engine/brush";
-import { textureFill } from "../engine/fillStrategies/textureFill";
+import { poissonFill } from "../engine/fillStrategies/poissonFill";
 import { commitWorking, getState } from "../engine/canvas";
 import { downloadImage } from "../engine/export";
 import * as history from "../engine/history";
@@ -43,7 +43,7 @@ export function initControls(): void {
 
   let radius = DEFAULT_RADIUS;
 
-  const brush = new BrushEngine(workingCanvas, textureFill, {
+  const brush = new BrushEngine(workingCanvas, poissonFill, {
     radius,
     hardness: HARDNESS,
   });
