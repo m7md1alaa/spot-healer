@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "bun --bun vitest run",
+    "test:watch": "bun --bun vitest"
   },
   "dependencies": {
     "browser-image-compression": "^2.0.2",
@@ -15,7 +17,9 @@
   },
   "devDependencies": {
     "@types/file-saver": "^2.0.7",
+    "jsdom": "^29.1.1",
     "typescript": "^6.0.3",
-    "vite": "^8.0.16"
+    "vite": "^8.0.16",
+    "vitest": "^4.1.8"
   }
 }

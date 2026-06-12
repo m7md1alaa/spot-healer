@@ -179,6 +179,10 @@ input[type="range"] {
   pointer-events: none;
 }
 
+.empty-state[hidden] {
+  display: none;
+}
+
 /* Brush cursor */
 
 .brush-cursor {

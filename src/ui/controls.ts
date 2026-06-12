@@ -1,5 +1,5 @@
 import { BrushEngine } from '../engine/brush';
-import { blurFill } from '../engine/fillStrategies/blurFill';
+import { textureFill } from '../engine/fillStrategies/textureFill';
 import { commitWorking, getState } from '../engine/canvas';
 import { downloadImage } from '../engine/export';
 import * as history from '../engine/history';
@@ -27,7 +27,7 @@ export function initControls(): void {
 
   let radius = DEFAULT_RADIUS;
 
-  const brush = new BrushEngine(workingCanvas, blurFill, { radius, hardness: HARDNESS });
+  const brush = new BrushEngine(workingCanvas, textureFill, { radius, hardness: HARDNESS });
   brush.onStrokeEnd = refreshHistoryButtons;
 
   // --- Brush size slider ---
