@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spot Healer</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="toolbar">
+        <div class="toolbar-group">
+          <label class="btn btn-primary" for="file-input">
+            Open photo
+            <input id="file-input" type="file" accept="image/*" hidden />
+          </label>
+        </div>
+
+        <div class="toolbar-group">
+          <label class="control-label" for="brush-size">Brush size</label>
+          <input id="brush-size" type="range" />
+          <span id="brush-size-value" class="control-value">20</span>
+        </div>
+
+        <div class="toolbar-group">
+          <button id="undo-btn" class="btn" disabled>Undo</button>
+          <button id="redo-btn" class="btn" disabled>Redo</button>
+        </div>
+
+        <div class="toolbar-group">
+          <button id="compare-btn" class="btn" disabled>Before</button>
+          <button id="download-btn" class="btn btn-primary" disabled>Download</button>
+        </div>
+      </header>
+
+      <main class="canvas-area">
+        <div id="canvas-wrapper" class="canvas-wrapper">
+          <p id="empty-state" class="empty-state">Open a photo to start retouching</p>
+          <canvas id="canvas-original" class="canvas-layer"></canvas>
+          <canvas id="canvas-working" class="canvas-layer"></canvas>
+          <div id="brush-cursor" class="brush-cursor"></div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
