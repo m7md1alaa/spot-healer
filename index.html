@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spot Healer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
@@ -37,7 +43,13 @@
 
       <main class="canvas-area">
         <div id="canvas-wrapper" class="canvas-wrapper">
-          <p id="empty-state" class="empty-state">Open a photo to start retouching</p>
+          <div id="empty-state" class="empty-state">
+            <svg class="empty-state-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+            <span class="empty-state-text">Open a photo to start retouching</span>
+          </div>
           <canvas id="canvas-original" class="canvas-layer"></canvas>
           <canvas id="canvas-working" class="canvas-layer"></canvas>
           <div id="brush-cursor" class="brush-cursor"></div>

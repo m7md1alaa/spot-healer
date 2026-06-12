@@ -23,7 +23,7 @@ export function initControls(): void {
   const wrapper = document.getElementById("canvas-wrapper") as HTMLDivElement;
   const emptyState = document.getElementById(
     "empty-state",
-  ) as HTMLParagraphElement;
+  ) as HTMLElement;
 
   const brushSizeInput = document.getElementById(
     "brush-size",
